@@ -1,0 +1,15 @@
+class Solution:
+    def isIsomorphic(self, s: str, t: str) -> bool:
+        d = dict()
+        r=dict()
+        for i in range(s):
+            if s[i] not in d:
+                d[s[i]] = t[i]
+            else:
+                if d[s[i]]!=t[i]:
+                    return False
+            if t[i] not in r:
+                r[t[i]] = s[i]
+            elif s[i]!=r[t[i]]:
+                 return False
+        return True
